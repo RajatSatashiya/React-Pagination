@@ -1,74 +1,49 @@
 {
   "list": [
     {
-      "text": "a",
+      "text": "read book",
       "status": false,
       "id": 1
     },
     {
-      "text": "b",
+      "text": "work on assignment",
       "status": false,
       "id": 2
     },
     {
-      "text": "c",
+      "text": "check mails",
       "status": false,
       "id": 3
     },
     {
-      "text": "d",
+      "text": "update windows",
       "status": false,
       "id": 4
     },
     {
-      "text": "e",
+      "text": "check messages",
       "status": false,
       "id": 5
     },
     {
-      "text": "f",
+      "text": "learn react",
       "status": false,
       "id": 6
     },
     {
-      "text": "g",
+      "text": "buy groceries",
       "status": false,
       "id": 7
     },
     {
-      "text": "h",
+      "text": "visit the react documentation site",
       "status": false,
       "id": 8
     },
     {
-      "text": "i",
+      "text": "college project completion",
       "status": false,
       "id": 9
-    },
-    {
-      "text": "j",
-      "status": false,
-      "id": 10
-    },
-    {
-      "text": "k",
-      "status": false,
-      "id": 11
-    },
-    {
-      "text": "l",
-      "status": false,
-      "id": 12
-    },
-    {
-      "text": "12",
-      "status": false,
-      "id": 13
-    },
-    {
-      "text": "13",
-      "status": false,
-      "id": 14
     }
   ]
 }

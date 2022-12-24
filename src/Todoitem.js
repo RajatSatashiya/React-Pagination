@@ -3,7 +3,6 @@ import React from "react";
 function Todoitem(props) {
   const handle = (e) => {
     e.stopPropagation();
-    console.log("clicked");
     props.deleteItem(props.id);
   };
   return (

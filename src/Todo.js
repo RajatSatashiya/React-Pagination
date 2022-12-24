@@ -15,8 +15,7 @@ function Todo() {
   const changePage = (sign) => {
     //+1 -> next page, -1 -> prev page
     if (sign == 1) {
-      var totalPages = Math.floor(length / 5) + 1;
-      if (page < totalPages) {
+      if (page < Math.floor(length / 5) + 1) {
         setPage((page) => page + sign);
         setError(false);
       } else {
@@ -41,7 +40,7 @@ function Todo() {
       const response = await fetch(
         `http://localhost:3000/list?_page=${page}&_limit=5`
       );
-      const res = await fetch(`http://localhost:3000/list`);
+      const res = await fetch(`http://localhost:3000/list`); //special request to check the total length of data
       setLoading(false);
 
       const data = await response.json();
@@ -49,7 +48,6 @@ function Todo() {
       setLength(result.length);
       setTodos(data);
     } catch (e) {
-      // console.log("error");
       setError(true);
       setErrmsg("Error while fetching the data");
     }
@@ -58,7 +56,6 @@ function Todo() {
   //post request
   const postTodo = async () => {
     setText("");
-    console.log(id);
     try {
       const response = await fetch(`http://localhost:3000/list`, {
         method: "POST",
@@ -73,8 +70,11 @@ function Todo() {
       });
       const data = await response.json();
       setId(id + 1);
-      console.log(data);
-      setTodos([...todos, data]);
+      setLength(length + 1);
+
+      if (todos.length < 5) {
+        setTodos([...todos, data]);
+      }
     } catch (e) {
       setError(true);
       setErrmsg("Error while creating an item.");
@@ -99,7 +99,6 @@ function Todo() {
         },
       });
       const data = await response.json();
-      console.log(data);
 
       var value = todos.map((item) => {
         if (item.id === id) {
@@ -109,7 +108,7 @@ function Todo() {
       });
       setTodos(value);
     } catch (e) {
-      console.log("Error");
+      setErrmsg("Error while changing the status");
     }
   };
 
@@ -123,10 +122,10 @@ function Todo() {
       var value = todos.filter((item) => {
         return item.id != id;
       });
-      console.log(value);
       setTodos(value);
+      setLength(length - 1);
     } catch (e) {
-      console.log("Error");
+      setErrmsg("Error while deleting an item");
     }
   };
 
