@@ -51,6 +51,7 @@
   background: white;
   width: 30%;
   text-align: center;
+  margin: 0.7rem;
   padding: 1rem;
   box-shadow: 0px 0px 7px grey;
 }
@@ -77,18 +78,16 @@
   border-left: 1rem solid #2cb1a5;
 }
 
-.red::before {
-  content: "";
+.red {
   display: inline-block;
-  background: red;
-  width: 20px;
-  aspect-ratio: 1;
+  background: #ff183f;
+  padding: 0.7rem 0.5rem;
+  margin-left: 0.7rem;
+  margin-top: 1rem;
 }
 
-.green::before {
-  content: "";
+.green {
   display: inline-block;
-  background: red;
-  width: 20px;
-  aspect-ratio: 1;
+  background: #2cb1a5;
+  padding: 0.7rem 0.5rem;
 }

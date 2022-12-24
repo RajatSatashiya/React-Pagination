@@ -123,8 +123,9 @@ function Todo() {
       ) : (
         <Pagination page={page} todos={todos} changeStatus={changeStatus} />
       )}
-      {/* <div className="circle red">Task Remaining</div>
-      <div className="circle green">Task Completed</div> */}
+
+      <div className="circle red">Task Remaining</div>
+      <div className="circle green">Task Completed</div>
 
       <div className="form">
         <input type="text" onChange={handleFunction} value={text}></input>
