@@ -5,6 +5,8 @@ function Todo() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [errmsg, setErrmsg] = useState("");
+  const [text, setText] = useState("");
+  const [id, setId] = useState(14);
 
   const [page, setPage] = useState(1);
   const [todos, setTodos] = useState([]);
@@ -30,6 +32,7 @@ function Todo() {
     }
   };
 
+  //get request
   const getTODOlist = async () => {
     try {
       setLoading(true);
@@ -41,9 +44,37 @@ function Todo() {
       const data = await response.json();
       setTodos(data);
     } catch (e) {
-      console.log("error");
+      // console.log("error");
       setError(true);
+      setErrmsg("Error while fetching the data");
     }
+  };
+
+  //post request
+  const postTodo = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/list`, {
+        method: "POST",
+        body: JSON.stringify({
+          text: text,
+          status: false,
+          id: id,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      setId(id + 1);
+      console.log(data);
+    } catch (e) {
+      setError(true);
+      setErrmsg("Error while creating an item.");
+    }
+  };
+
+  const handleFunction = (e) => {
+    setText(e.target.value);
   };
 
   useEffect(() => {
@@ -62,6 +93,11 @@ function Todo() {
       ) : (
         <Pagination page={page} todos={todos} />
       )}
+
+      <div className="form">
+        <input type="text" onChange={handleFunction} value={text}></input>
+        <button onClick={postTodo}>ADD</button>
+      </div>
       <div className="error">{error ? errmsg : ""}</div>
     </>
   );
