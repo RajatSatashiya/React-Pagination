@@ -15,7 +15,7 @@ function Todo() {
   const changePage = (sign) => {
     //+1 -> next page, -1 -> prev page
     if (sign == 1) {
-      if (page < Math.floor(length / 5) + 1) {
+      if (page < Math.floor(length / 5) + Math.ceil((length % 5) / 5)) {
         setPage((page) => page + sign);
         setError(false);
       } else {
