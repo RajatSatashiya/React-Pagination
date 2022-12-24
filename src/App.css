@@ -1,38 +1,48 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.btns {
+  /* background: pink; */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.btns button {
+  margin: 0.6rem;
+  background: black;
   color: white;
+  font-family: Montserrat;
+  padding: 10px 35px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.btns button:hover {
+  background: white;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loading {
+  font-family: Montserrat;
+  font-size: 2rem;
+  margin: 4rem;
+}
+
+.todoitem {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 1.4rem;
+  width: 50%;
+  background: #ffd88f;
+  border-left: 1rem solid #2cb1a5;
+  padding: 0.7rem 1.5rem;
+  text-transform: capitalize;
+  margin: 0.7rem;
+}
+
+.error {
+  color: red;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
 }

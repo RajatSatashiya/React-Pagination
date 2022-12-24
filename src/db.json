@@ -1,0 +1,16 @@
+{
+  "list": [
+    { "text": "buy book", "status": false, "id": 1 },
+    { "text": "learn react", "status": false, "id": 2 },
+    { "text": "do assignment", "status": false, "id": 3 },
+    { "text": "play guitar", "status": false, "id": 4 },
+    { "text": "visit atm", "status": false, "id": 5 },
+    { "text": "check balance", "status": false, "id": 6 },
+    { "text": "jogging", "status": false, "id": 7 },
+    { "text": "check messages, emails", "status": false, "id": 8 },
+    { "text": "understand state lifting", "status": false, "id": 9 },
+    { "text": "learn pagination", "status": false, "id": 10 },
+    { "text": "clean bookshelf", "status": false, "id": 11 },
+    { "text": "watch the course lecture", "status": false, "id": 12 }
+  ]
+}
