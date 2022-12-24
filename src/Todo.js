@@ -6,10 +6,41 @@ function Todo() {
   const [error, setError] = useState(false);
   const [errmsg, setErrmsg] = useState("");
   const [text, setText] = useState("");
-  const [id, setId] = useState(14);
+  const [id, setId] = useState(12);
 
   const [page, setPage] = useState(1);
   const [todos, setTodos] = useState([]);
+
+  const changeStatus = async (id) => {
+    try {
+      //get currentStatus -> get request
+      const res = await fetch(`http://localhost:3000/list/${id}`);
+      const currentStatus = await res.json();
+
+      //update the status
+      const response = await fetch(`http://localhost:3000/list/${id}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          status: !currentStatus.status,
+        }),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+
+      var value = todos.map((item) => {
+        if (item.id === id) {
+          item.status = !currentStatus.status;
+        }
+        return item;
+      });
+      setTodos(value);
+    } catch (e) {
+      console.log("Error");
+    }
+  };
 
   const changePage = (sign) => {
     //+1 -> next page, -1 -> prev page
@@ -87,12 +118,13 @@ function Todo() {
         <button onClick={() => changePage(-1)}>Prev Page</button>
         <button onClick={() => changePage(+1)}>Next Page</button>
       </div>
-
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
-        <Pagination page={page} todos={todos} />
+        <Pagination page={page} todos={todos} changeStatus={changeStatus} />
       )}
+      {/* <div className="circle red">Task Remaining</div>
+      <div className="circle green">Task Completed</div> */}
 
       <div className="form">
         <input type="text" onChange={handleFunction} value={text}></input>

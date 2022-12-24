@@ -54,26 +54,6 @@
       "text": "clean bookshelf",
       "status": false,
       "id": 11
-    },
-    {
-      "text": "watch the course lecture",
-      "status": false,
-      "id": 12
-    },
-    {
-      "text": "check stocks",
-      "status": false,
-      "id": 13
-    },
-    {
-      "text": "added using input box",
-      "status": false,
-      "id": 14
-    },
-    {
-      "text": "another one using input box",
-      "status": false,
-      "id": 15
     }
   ]
 }

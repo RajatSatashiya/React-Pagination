@@ -33,7 +33,7 @@
   font-size: 1.4rem;
   width: 50%;
   background: #ffd88f;
-  border-left: 1rem solid #2cb1a5;
+  border-left: 1rem solid #ff183f;
   padding: 0.7rem 1.5rem;
   text-transform: capitalize;
   margin: 0.7rem;
@@ -71,4 +71,24 @@
   border: none;
   font-weight: bold;
   background: #9d98d0;
+}
+
+.done {
+  border-left: 1rem solid #2cb1a5;
+}
+
+.red::before {
+  content: "";
+  display: inline-block;
+  background: red;
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.green::before {
+  content: "";
+  display: inline-block;
+  background: red;
+  width: 20px;
+  aspect-ratio: 1;
 }
